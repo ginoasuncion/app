@@ -1,0 +1,11 @@
+[Unit]
+Description=Go Web Server
+
+[Service]
+ExecStart=/home/laborant/main
+Restart=always
+User=laborant
+
+[Install]
+WantedBy=multi-user.target
+
