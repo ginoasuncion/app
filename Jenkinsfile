@@ -1,15 +1,11 @@
 pipeline {
     agent any
-
-    tools {
-       go "1.24.1"
-    }
-
     stages {
-        stage('Build') {
+        stage('Deploy with Ansible') {
             steps {
-                sh "go build main.go"
+                sh 'ansible-playbook --inventory hosts.ini playbook.yml'
             }
         }
     }
 }
+
